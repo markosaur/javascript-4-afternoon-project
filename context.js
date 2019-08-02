@@ -1,4 +1,4 @@
-/* 
+    /* 
   Once you complete a problem, refresh ./context.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
@@ -18,10 +18,13 @@
   getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 */
   
-
-//Code Here
-
-
+user = {
+  username: 'Mark',
+  email: 'mark.mark@hello.com',
+  getUsername: function (){
+      return this.username
+  }
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -41,7 +44,7 @@ class Animal {
   }
 }
 
-//Code Here
+let animal1 = new Animal('Geofrey', 'Giraffe', 'Leaves')
 
 
 
@@ -61,7 +64,7 @@ let who = {
   location: 'Belize'
 }
 
-//Code Here
+const whoSaysHi = sayHi.bind(who) 
 
 
 
@@ -76,7 +79,7 @@ function whatIsThis() {
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-//let context1 = ???
+let context1 = whatIsThis()
 
 let product = {
   name: 'snake plant',
@@ -87,7 +90,7 @@ let product = {
 let func = whatIsThis.bind(product)
 
 // uncomment the line below and tell us what the context of "this" is when we invoke func
-//let context2 = ???
+let context2 = product
 
 let vacation = {
   location: 'Hawaii',
@@ -98,7 +101,7 @@ let vacation = {
 }
 
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
-//let context3 = ???
+let context3 = vacation
 
 
 class Family {
@@ -116,4 +119,7 @@ class Family {
 let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
-//let context4 = ???
+let context4 = family1
+
+//scope is used to see another variable
+//context is the same thing as scope but it is referring to objects
